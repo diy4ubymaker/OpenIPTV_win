@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Self-contained test runner (no test framework packages). Run: dotnet run, project tests/OpenIPTV.Tests -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>OpenIPTV.Tests</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\OpenIPTV.Core\OpenIPTV.Core.csproj" />
+    <ProjectReference Include="..\..\src\OpenIPTV.ViewModels\OpenIPTV.ViewModels.csproj" />
+  </ItemGroup>
+</Project>

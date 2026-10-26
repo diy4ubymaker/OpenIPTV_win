@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- WPF desktop app. Build/run on Windows: dotnet run, project src/OpenIPTV.App -->
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <!-- LibVLCSharp.WPF hosts the native video surface with WindowsFormsHost. -->
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>OpenIPTV</AssemblyName>
+    <RootNamespace>OpenIPTV.App</RootNamespace>
+    <ApplicationIcon>Assets\openiptv.ico</ApplicationIcon>
+    <!-- Fluent theme (Application.ThemeMode) is marked experimental in WPF. -->
+    <NoWarn>$(NoWarn);WPF0001</NoWarn>
+    <!-- Only ship the 64-bit VLC engine. -->
+    <VlcWindowsX64Enabled>true</VlcWindowsX64Enabled>
+    <VlcWindowsX86Enabled>false</VlcWindowsX86Enabled>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- LibVLC (the engine inside VLC) for playback: HLS, DASH, RTMP, RTSP, UDP/multicast, custom headers. -->
+    <PackageReference Include="LibVLCSharp.WPF" Version="3.*" />
+    <PackageReference Include="VideoLAN.LibVLC.Windows" Version="3.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Keep WPF types unambiguous (Application, MessageBox, Clipboard, Image …). -->
+    <Using Remove="System.Windows.Forms" />
+    <Using Remove="System.Drawing" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OpenIPTV.ViewModels\OpenIPTV.ViewModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\openiptv.ico" />
+    <Resource Include="Assets\openiptv.png" />
+    <Resource Include="Assets\channel-placeholder.png" />
+  </ItemGroup>
+</Project>

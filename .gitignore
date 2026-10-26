@@ -1,0 +1,22 @@
+# Build output
+bin/
+obj/
+publish/
+dist/
+
+# App data (never commit channel data, settings or logs)
+data/
+data-dev/
+*.log
+*.log.1
+
+# IDE and OS files
+.vs/
+.idea/
+*.user
+*.suo
+*.DotSettings.user
+TestResults/
+Thumbs.db
+Desktop.ini
+.DS_Store

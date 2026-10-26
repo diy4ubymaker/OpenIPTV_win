@@ -1,0 +1,20 @@
+{
+  // Rename the folder "vscode-config" to ".vscode" so VS Code picks these up.
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "OpenIPTV (debug)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/src/OpenIPTV.App/bin/Debug/net10.0-windows/OpenIPTV.dll",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "stopAtEntry": false,
+      "env": {
+        // Keep development data separate from your everyday %LOCALAPPDATA%\OpenIPTV.
+        "OPENIPTV_DATA_DIR": "${workspaceFolder}/data-dev"
+      }
+    }
+  ]
+}

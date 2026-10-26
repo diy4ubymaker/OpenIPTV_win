@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- MVVM layer (no WPF types) so it can be unit-tested on any OS. -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>OpenIPTV.ViewModels</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OpenIPTV.Core\OpenIPTV.Core.csproj" />
+  </ItemGroup>
+</Project>
